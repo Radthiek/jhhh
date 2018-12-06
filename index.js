@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
-const rad = new Discord.Client();
+const client = new Discord.Client();
 
 console.log("BOT ONLINE");
  
-rad.on("guildMemberAdd", member => {
+client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(` 
 **
@@ -16,4 +16,4 @@ rad.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
-rad.login(process.env.token);
+client.login(process.env.token);
