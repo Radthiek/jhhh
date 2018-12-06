@@ -1,12 +1,19 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
+const Discord = require('discord.js');
+const rad = new Discord.Client();
 
-
-  client.on("guildMemberAdd", member => {
+console.log("BOT ONLINE");
+ 
+rad.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
-  return channel.send(`**هلا  نورت  سيرفر   تبقى دورك  هنا افضل  شوب واكواد  مجانيه ورهيبة ادخل وبس ** [https://discord.gg/zuFJ7UP]`) 
+  return channel.send(` 
+**
+سلام عليكم 
+لو سمحت ممكن تدخل سيرفرى
+لأن سيرفر  فيه شوب واكواد خاصة لك
+                               [ https://discord.gg/zuFJ7UP ] 
+الدعووة خاصة لك ... [ ${member}  ]
+**`) 
 }).catch(console.error)
 })
 
-client.login(process.env.BOT_TOKEN);
-
+rad.login(process.env.token);
